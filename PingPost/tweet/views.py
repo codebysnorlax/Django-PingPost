@@ -10,7 +10,7 @@ def index(request):
 
 # for listing tweets
 def tweet_list(request):
-    tweets = Tweet.object.all().order_by('-created_at')
+    tweets = Tweet.objects.all().order_by('-created_at')
     return render(request, 'tweet_list.html', {'tweets':tweets})
 
 # for creating tweets
