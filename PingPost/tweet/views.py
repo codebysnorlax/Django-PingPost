@@ -15,11 +15,11 @@ def tweet_list(request):
 
 # for creating tweets
 def tweet_create(request):
-    if request.method == 'post' :
-        TweetForms(request.POST, request.FILES)
+    if request.method == 'POST' :
+        form = TweetForms(request.POST, request.FILES)
         if form.is_valid():
             tweet = form.save(commit=False)
-            tweet.user = request
+            tweet.user = request.user
             tweet.save()
             return redirect('tweet_list')
     else:
