@@ -54,7 +54,7 @@ def tweet_delete(request, tweet_id):
         return redirect('tweet_list')
     return render(request, 'tweet_conform_delete.html', {'tweet':tweet})
 
-def resister(request):
+def register(request):
     if request.method == 'POST':
         form = UserRegistrationForm(request.POST)
         if form.is_valid():
