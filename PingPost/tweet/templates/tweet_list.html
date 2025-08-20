@@ -5,16 +5,6 @@ Ping-Post | home
 {% endblock %}
 {% comment %} ------------------------------------------- {% endcomment %}
 {% block content %}
-<div class="mb-4 composer-card">
-   <div class="composer-input">What's on your mind?</div>
-   <div class="composer-icons">
-      <i class="bi bi-link-45deg"></i>
-      <i class="bi bi-camera"></i>
-      <i class="bi bi-image"></i>
-   </div>
-   <a class='btn btn-accent rounded-pill px-4' href="{% url 'tweet_create' %}">Ping</a>
-</div>
-
 <div class="tweet-grid">
    {% for tweet in tweets %}
    <div class="card pp-card tweet-card">

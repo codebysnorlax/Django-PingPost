@@ -137,6 +137,33 @@
   box-shadow: 0 0 0 .2rem rgba(156,59,109,.25);
 }
 
+/* Floating field help for register page */
+.field-with-help { position: relative; }
+.field-help {
+  position: absolute;
+  bottom: calc(100% + 8px);
+  left: 0;
+  width: min(520px, 100%);
+  background: var(--pp-surface-2);
+  border: 1px solid rgba(255,255,255,.08);
+  color: var(--pp-text-dim);
+  border-radius: 12px;
+  box-shadow: var(--pp-shadow);
+  padding: 12px 14px;
+  display: none;
+  z-index: 20;
+}
+.field-help.show { display: block; }
+.field-help:after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 16px;
+  border-width: 8px;
+  border-style: solid;
+  border-color: var(--pp-surface-2) transparent transparent transparent;
+}
+
 .form-actions {
   display: flex;
   align-items: center;
