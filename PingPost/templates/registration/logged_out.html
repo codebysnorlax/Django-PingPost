@@ -1,8 +1,13 @@
 {% extends "layout.html" %}
 {% block title %}
- Ping-Post | Logged Out
+Ping-Post | Logged Out
 {% endblock %}
 {% block content %}
-<h2>Logged out</h2>
-<p>You have been logged out! <a href="{% url 'login' %}">login here</a></p>
+<div class="d-flex align-items-center justify-content-center auth-wrapper">
+    <div class="auth-card text-center">
+        <h2>See you soon</h2>
+        <p class="pp-muted mb-4">You have been logged out.</p>
+        <a href="{% url 'login' %}" class="btn btn-accent rounded-pill px-4">Login again</a>
+    </div>
+</div>
 {% endblock %}
