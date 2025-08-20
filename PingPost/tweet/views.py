@@ -1,5 +1,4 @@
 from django.shortcuts import render
-
 from .models import Tweet
 from .forms import TweetForms, UserRegistrationForm
 from django.shortcuts import get_object_or_404, redirect
