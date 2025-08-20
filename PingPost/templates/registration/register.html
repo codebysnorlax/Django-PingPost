@@ -5,9 +5,9 @@ Ping-Post | Register
 {% endblock %}
 {% block content %}
 <div class="auth-wrapper d-flex justify-content-center">
-    <div class="auth-card w-100" style="max-width:920px">
-        <div class="row g-4 align-items-start">
-            <div class="col-12 col-lg-6">
+    <div class="auth-card w-100" >
+        <div class="row g-4 align-items-start overflow-hidden">
+            <div>
                 <h2>Create account</h2>
                 <p class="pp-muted mb-3">Join PingPost to start pinging</p>
                 <form method="post" class="vstack gap-3">
@@ -27,7 +27,7 @@ Ping-Post | Register
                     </div>
                 </form>
             </div>
-            <div class="col-12 col-lg-6 d-none d-lg-block"></div>
+            {% comment %} <div class="col-12 col-lg-6 d-none d-lg-block"></div> {% endcomment %}
         </div>
     </div>
 </div>
