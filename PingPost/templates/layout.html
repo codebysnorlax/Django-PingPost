@@ -46,19 +46,7 @@
   </div>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-ppQhHc4t8l2o8pQZVn1B2u4Q3Xq3Z2X2t2T2R2wz7vQ0X2D1l1Z1l" crossorigin="anonymous"></script>
-  <script>
-    // Show floating help when password field is focused or has value
-    document.addEventListener('DOMContentLoaded', function () {
-      var pwdField = document.querySelector('.field-with-help input');
-      var help = document.querySelector('.field-with-help .field-help');
-      if (!pwdField || !help) return;
-      var toggle = function () { help.classList.toggle('show', !!pwdField.value || document.activeElement === pwdField); };
-      pwdField.addEventListener('focus', toggle);
-      pwdField.addEventListener('blur', toggle);
-      pwdField.addEventListener('input', toggle);
-      toggle();
-    });
-  </script>
+  <script src="{% static 'js/hint.js' %}"></script>
 </body>
 
 </html>
