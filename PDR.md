@@ -11,9 +11,9 @@ Ping-Post allows users to share their thoughts, experiences, and solutions. It p
 ## Tech Stack
 
 * **Backend:** Django
-* **Database:** SQLite3 / MongoDB
+* **Database:** SQLite3
 * **Frontend:** HTML, CSS
-* **Styling Frameworks:** Tailwind CSS / Bootstrap
+* **Styling Frameworks:** Bootstrap
 
 ## Features
 
@@ -21,9 +21,9 @@ Ping-Post allows users to share their thoughts, experiences, and solutions. It p
   * Custom user registration
   * Custom login & logout
 * Image uploads
-* Like, dislike, and save posts
+* Like, dislike, and save posts (not implemented)
 * Edit and delete posts
-* Search posts
+* Search posts (not implemented)
 
 ## Problem Solving
 

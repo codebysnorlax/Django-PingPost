@@ -1,5 +1,7 @@
 {% extends "layout.html" %}
-
+{% block title %}
+ Ping-Post | Logged Out
+{% endblock %}
 {% block content %}
 <h2>Logged out</h2>
 <p>You have been logged out! <a href="{% url 'login' %}">login here</a></p>
