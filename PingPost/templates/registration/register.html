@@ -1,15 +1,21 @@
 {% extends "layout.html" %}
-{% load static %}
-{% block style %}
-<link rel="stylesheet" href="{% static 'css/register_page.css' %}">
-{% endblock %}
+
 {% block title %}
- Ping-Post | Register
+Ping-Post | Register
 {% endblock %}
 {% block content %}
-<form method="post">
-{% csrf_token %}
-{{form.as_p}}
-<button class='btn btn-primary'>Register</button>
-</form>
+<div class="d-flex align-items-center justify-content-center auth-wrapper">
+    <div class="auth-card">
+        <h2>Create account</h2>
+        <p class="pp-muted mb-3">Join PingPost to start pinging</p>
+        <form method="post" class="vstack gap-3">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <div class="form-actions">
+                <button class='btn btn-accent rounded-pill px-4'>Register</button>
+                <a href="{% url 'login' %}" class="pp-muted">Already have an account?</a>
+            </div>
+        </form>
+    </div>
+</div>
 {% endblock %}

@@ -1,17 +1,20 @@
 {% extends "layout.html" %}
-{% load static %}
-{% block style %}
-<link rel="stylesheet" href="{% static 'css/login_page.css' %}">
-{% endblock %}
 {% block title %}
- Ping-Post | Login
+Ping-Post | Login
 {% endblock %}
 {% block content %}
-<h2>Login</h2>
-<form method="post">
-{% csrf_token %}
-{{form.as_p}}
-<button class='btn btn-primary'>Login</button>
-</form>
-<p>Don't have an account? <a href="{% url 'register' %}">Register here</a></p>
+<div class="d-flex align-items-center justify-content-center auth-wrapper">
+    <div class="auth-card">
+        <h2>Welcome back</h2>
+        <p class="pp-muted mb-3">Sign in to continue</p>
+        <form method="post" class="vstack gap-3">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <div class="form-actions">
+                <button class='btn btn-accent rounded-pill px-4'>Login</button>
+                <a href="{% url 'register' %}" class="pp-muted">Create an account</a>
+            </div>
+        </form>
+    </div>
+</div>
 {% endblock %}

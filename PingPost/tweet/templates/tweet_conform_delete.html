@@ -1,14 +1,19 @@
 {% extends "layout.html" %}
 {% comment %} ------------------------------------------- {% endcomment %}
 {% block title %}
- Ping-Post | check 2
+Ping-Post | check 2
 {% endblock %}
 {% comment %} ------------------------------------------- {% endcomment %}
 {% block content %}
-    <h1 class='text-center mt-4'>Are you sure want to delete this tweet</h1>
-    <form method="post">
-        {% csrf_token %}
-        <button class='btn btn-danger'>Delete</button>
-        <a class='btn btn-success' href="{% url 'tweet_list' %}">Cancel</a>
-    </form>
-{% endblock  %}
+<div class="d-flex align-items-center justify-content-center auth-wrapper">
+    <div class="auth-card text-center">
+        <h2>Delete this ping?</h2>
+        <p class="pp-muted mb-4">This action cannot be undone.</p>
+        <form method="post" class="d-flex justify-content-center gap-2">
+            {% csrf_token %}
+            <button class='btn btn-danger rounded-pill px-4'>Delete</button>
+            <a class='btn btn-outline-accent rounded-pill px-4' href="{% url 'tweet_list' %}">Cancel</a>
+        </form>
+    </div>
+</div>
+{% endblock %}

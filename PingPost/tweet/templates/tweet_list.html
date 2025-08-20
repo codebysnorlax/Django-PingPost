@@ -1,32 +1,41 @@
 {% extends "layout.html" %}
 {% comment %} ------------------------------------------- {% endcomment %}
 {% block title %}
- Ping-Post | home
+Ping-Post | home
 {% endblock %}
 {% comment %} ------------------------------------------- {% endcomment %}
 {% block content %}
-<h1 class='text-center mt-4'>Welcome to Ping-Post</h1>
-
-<a class='btn btn-primary mb-4' href="{% url "tweet_create" %}">Create</a>
-<div class="container row gap-3">
-    {% for tweet in tweets %}
-       <div class="card" style="width: 18rem">
-        {% if tweet.photo %}
-        <img src="{{ tweet.photo.url }}" class="card-img-top" alt="tweet-pic" />
-        {% else %}
-        <div class="card-img-top text-center p-4 text-muted">No image</div>
-        {% endif %}
-
-        <div class="card-body">
-           <h5 class="card-title">Ping by {{tweet.user.username}}</h5>
-            <p class="card-text">{{tweet.text}}
-           </p>
-           {% if tweet.user == user %}
-           <a href="{% url 'tweet_edit' tweet.id %}" class="btn btn-primary">Edit</a>
-           <a href="{% url 'tweet_delete' tweet.id %}" class="btn btn-danger">Delete</a>
-           {% endif %}
-        </div>
-       </div>
-    {% endfor %}
+<div class="mb-4 composer-card">
+   <div class="composer-input">What's on your mind?</div>
+   <div class="composer-icons">
+      <i class="bi bi-link-45deg"></i>
+      <i class="bi bi-camera"></i>
+      <i class="bi bi-image"></i>
+   </div>
+   <a class='btn btn-accent rounded-pill px-4' href="{% url 'tweet_create' %}">Ping</a>
 </div>
-{% endblock  %}
+
+<div class="tweet-grid">
+   {% for tweet in tweets %}
+   <div class="card pp-card tweet-card">
+      {% if tweet.photo %}
+      <img src="{{ tweet.photo.url }}" class="card-img-top" alt="tweet-pic" />
+      {% else %}
+      <div class="card-img-top text-center p-4 pp-muted">No image</div>
+      {% endif %}
+
+      <div class="card-body">
+         <h5 class="card-title">Ping by {{tweet.user.username}}</h5>
+         <p class="card-text">{{tweet.text}}
+         </p>
+         {% if tweet.user == user %}
+         <div class="d-flex gap-2">
+            <a href="{% url 'tweet_edit' tweet.id %}" class="btn btn-outline-accent btn-sm">Edit</a>
+            <a href="{% url 'tweet_delete' tweet.id %}" class="btn btn-danger btn-sm">Delete</a>
+         </div>
+         {% endif %}
+      </div>
+   </div>
+   {% endfor %}
+</div>
+{% endblock %}

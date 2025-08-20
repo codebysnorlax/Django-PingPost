@@ -1,25 +1,28 @@
 {% extends "layout.html" %}
 {% comment %} ------------------------------------------- {% endcomment %}
 {% block title %}
- Ping-Post | Creative
+Ping-Post | Creative
 {% endblock %}
 {% comment %} ------------------------------------------- {% endcomment %}
 {% block content %}
-    <h1 class='text-center mt-4'>Welcome to Ping-Post</h1>
-
-    <h2>
-        {% if form.instance.pk %}
-            Edit Tweet
-        {% else %}
-            Create Tweet
-        {% endif %}
-    </h2>
-
-    <form method='post' enctype='multipart/form-data' class='form'>
-        {% csrf_token %}
-        {{ form.as_p }}
-
-        <button class='btn btn-warning' type='submit'>Done</button>
-        <a href="{% url 'tweet_list' %}">Back to tweet</a>
-    </form>
+<div class="d-flex align-items-center justify-content-center auth-wrapper">
+    <div class="auth-card" style="max-width:560px; width:100%">
+        <h2 class="mb-1">
+            {% if form.instance.pk %}
+            Edit Ping
+            {% else %}
+            Create Ping
+            {% endif %}
+        </h2>
+        <p class="pp-muted mb-3">Share what's on your mind</p>
+        <form method='post' enctype='multipart/form-data' class='vstack gap-3'>
+            {% csrf_token %}
+            {{ form.as_p }}
+            <div class="form-actions">
+                <button class='btn btn-accent rounded-pill px-4' type='submit'>Done</button>
+                <a class='btn btn-outline-accent rounded-pill px-4' href="{% url 'tweet_list' %}">Back</a>
+            </div>
+        </form>
+    </div>
+</div>
 {% endblock %}
