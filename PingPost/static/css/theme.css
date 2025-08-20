@@ -15,12 +15,20 @@
   --pp-radius: 16px;
 }
 
+[data-bs-theme='dark'] html { background: var(--pp-bg); }
 [data-bs-theme='dark'] body {
   background: radial-gradient(1200px 600px at 10% -10%, rgba(125,43,88,.25), transparent),
               radial-gradient(1000px 500px at 100% 0%, rgba(156,59,109,.15), transparent),
               var(--pp-bg);
   color: var(--pp-text);
   font-family: 'Poppins', system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+  min-height: 100%;
+  background-attachment: fixed, fixed, scroll; /* keep glow backdrop consistent */
+}
+
+.page-container {
+  min-height: calc(100vh - 80px);
+  padding-bottom: 64px; /* breathing room so bottom never feels cut */
 }
 
 /* Navbar */
@@ -103,9 +111,7 @@
 }
 
 /* Auth and forms */
-.auth-wrapper {
-  min-height: calc(100vh - 64px);
-}
+.auth-wrapper { min-height: calc(100vh - 80px); }
 .auth-card {
   width: 100%;
   max-width: 440px;
