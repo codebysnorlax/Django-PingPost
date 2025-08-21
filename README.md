@@ -44,15 +44,15 @@ Video Demo: <link soon>
 
 ```mermaid
 graph TD
-  User[User/Browser] --> URLs[Project urls.py]
-  URLs --> Home[home view (/)]
-  URLs --> TweetRoutes[tweet/urls.py (/tweet/*)]
-  TweetRoutes --> Views[tweet/views.py]
-  Views --> Templates[Templates (HTML)]
-  Views --> Forms[Forms]
-  Forms --> Model[Tweet model]
-  Model --> DB[(SQLite)]
-  Model --> Media[(media/photos)]
+  A[User/Browser] --> B[Project urls.py]
+  B --> C[home view]
+  B --> D[tweet/urls.py]
+  D --> E[tweet/views.py]
+  E --> F[Templates HTML]
+  E --> G[Forms]
+  G --> H[Tweet model]
+  H --> I[SQLite]
+  H --> J[media/photos]
 ```
 
 Simple flow (fallback):
