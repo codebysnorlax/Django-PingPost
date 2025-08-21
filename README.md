@@ -39,3 +39,24 @@ SQLite is the default database so you can run it right away. Later, it could be 
 #### Video Demo
 
 Video Demo: <link soon>
+
+### System Diagram
+
+```mermaid
+graph TD
+  User[User/Browser] --> URLs[Project urls.py]
+  URLs --> Home[home view (/)]
+  URLs --> TweetRoutes[tweet/urls.py (/tweet/*)]
+  TweetRoutes --> Views[tweet/views.py]
+  Views --> Templates[Templates (HTML)]
+  Views --> Forms[Forms]
+  Forms --> Model[Tweet model]
+  Model --> DB[(SQLite)]
+  Model --> Media[(media/photos)]
+```
+
+Simple flow (fallback):
+
+```
+User → urls.py → tweet/urls.py → views → templates/forms → Tweet model → SQLite + media/photos
+```
