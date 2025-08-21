@@ -47,12 +47,17 @@ graph TD
   A[User/Browser] --> B[Project urls.py]
   B --> C[home view]
   B --> D[tweet/urls.py]
+  B --> L[accounts/ auth urls]
   D --> E[tweet/views.py]
   E --> F[Templates HTML]
   E --> G[Forms]
   G --> H[Tweet model]
+  G --> K[Auth User]
   H --> I[SQLite]
+  K --> I
   H --> J[media/photos]
+  L --> F
+  L --> K
 ```
 
 Simple flow (fallback):
