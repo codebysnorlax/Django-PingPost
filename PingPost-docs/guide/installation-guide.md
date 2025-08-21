@@ -24,6 +24,9 @@ python PingPost/manage.py migrate
 python PingPost/manage.py runserver
 ```
 
+Open `http://127.0.0.1:8000/tweet/` to browse pings. Register an account at `/tweet/register/` to start posting.
+
+
 Optional:
 
 - Create a superuser for admin: `python PingPost/manage.py createsuperuser`

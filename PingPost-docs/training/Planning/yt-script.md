@@ -1,6 +1,6 @@
-### Human-Friendly Video Script (read this aloud)
+### CS50 Final Project – PingPost Video Script (<= 3 minutes)
 
-Hey everyone! I’m <Your Name>, and this is my CS50 final project, PingPost. You’ll see my info on the opening slide: GitHub <your_github>, edX <your_edx>, I’m in <City, Country>, and I recorded this on <Date>. Alright, let’s jump in.
+Hey everyone! I’m <Ravi Ranjan Sharma>, and this is my CS50 final project, PingPost. You’ll see my info on the opening slide: GitHub <Ravi-Ranjan-Sharma-droid>, edX <raviranjan12_1>, I’m in <Bokaro, India>, and I recorded this on <Date>. Alright, let’s jump in.
 
 [on screen: browser at /tweet/]
 PingPost is a tiny, no‑nonsense microblog I built with Django. Think of it as a place to quickly “ping” a thought, with an optional image, and move on. I wanted something simple, fast, and kind of delightful to use.
