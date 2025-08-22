@@ -224,7 +224,7 @@
 
 /* Utilities */
 .rounded-pill {
-  border-radius: 999px !important;
+  border-radius: 12px !important;
 }
 .shadow-soft {
   box-shadow: var(--pp-shadow);
@@ -345,8 +345,8 @@ textarea {
     transform 0.15s ease;
 }
 textarea {
-  min-height: 120px;
-  resize: vertical;
+  resize: none;
+  height: 78px;
 }
 input::placeholder,
 textarea::placeholder {
@@ -411,8 +411,8 @@ h2 {
     transform: translateY(0);
   }
 }
-.form,
+/* .form,
 h1,
 h2 {
   animation: fadeInUp 0.5s ease-out;
-}
+} */
