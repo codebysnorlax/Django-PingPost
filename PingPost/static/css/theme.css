@@ -216,8 +216,8 @@
 /* Tweet grid */
 .tweet-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-  gap: 16px;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 12px;
   margin: 12px;
 }
 .tweet-card img {
@@ -225,7 +225,7 @@
   border-top-right-radius: var(--pp-radius);
 }
 .tweet-card .card-body {
-  padding: 14px 16px 16px;
+  padding: 12px 14px 14px;
 }
 
 /* Utilities */
