@@ -19,7 +19,7 @@ Ping-Post | Creative
             {% csrf_token %}
             {{ form.as_p }}
             <div class="form-actions">
-                <button class='btn btn-accent rounded-pill px-4' type='submit'>Done</button>
+                <button class='btn btn-accent rounded-pill px-4' type='submit'>Ping</button>
                 <a class='btn btn-outline-accent rounded-pill px-4' href="{% url 'tweet_list' %}">Back</a>
             </div>
         </form>

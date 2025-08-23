@@ -2,20 +2,16 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
 
 :root {
-  --pp-bg: #0e0f12;        /* Deep charcoal background */
-  --pp-surface: #181a1f;   /* Slightly lighter surface */
-  --pp-surface-2: #22252d; /* Secondary surface */
-
-  --pp-text: #f5f7fa;      /* Crisp white text */
-  --pp-text-dim: #a0a7b4;  /* Muted gray text */
-
-  --pp-accent: #6a4cff;    /* Premium indigo accent */
-  --pp-accent-2: #8a6fff;  /* Lighter variant */
-
-  --pp-danger: #ff5c5c;    /* Polished red */
-  --pp-success: #3ccf91;   /* Modern teal green */
-
-  --pp-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  --pp-bg: #140a14;
+  --pp-surface: #1e0f1f;
+  --pp-surface-2: #2a1830;
+  --pp-text: #f4f1f6;
+  --pp-text-dim: #c8bfd0;
+  --pp-accent: #7d2b58;
+  --pp-accent-2: #9c3b6d;
+  --pp-danger: #e05252;
+  --pp-success: #2bb673;
+  --pp-shadow: 0 10px 30px rgba(0, 0, 0, 0.45);
   --pp-radius: 16px;
 }
 
@@ -270,6 +266,7 @@ a:hover {
 .btn {
   font-weight: 600;
   border: none;
+  align-content: center;
   transition: transform 0.15s ease, box-shadow 0.2s ease, background 0.2s ease;
 }
 .btn:active {
@@ -422,3 +419,59 @@ h1,
 h2 {
   animation: fadeInUp 0.5s ease-out;
 } */
+/* delete button style */
+.ravi {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: rgb(20, 20, 20);
+  border: none;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.164);
+  cursor: pointer;
+  transition-duration: .3s;
+  overflow: hidden;
+  position: relative;
+}
+
+.svgIcon {
+  width: 12px;
+  transition-duration: .3s;
+}
+
+.svgIcon path {
+  fill: white;
+}
+
+.ravi:hover {
+  width: 140px;
+  border-radius: 50px;
+  transition-duration: .3s;
+  background-color: rgb(255, 69, 69);
+  align-items: center;
+}
+
+.ravi:hover .svgIcon {
+  width: 50px;
+  transition-duration: .3s;
+  transform: translateY(60%);
+}
+
+.ravi::before {
+  position: absolute;
+  top: -20px;
+  content: "Delete";
+  color: white;
+  transition-duration: .3s;
+  font-size: 2px;
+}
+
+.ravi:hover::before {
+  font-size: 13px;
+  opacity: 1;
+  transform: translateY(30px);
+  transition-duration: .3s;
+}

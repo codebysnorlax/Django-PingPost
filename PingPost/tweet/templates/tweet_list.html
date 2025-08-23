@@ -20,8 +20,8 @@ Ping-Post
          </p>
          {% if tweet.user == user %}
          <div class="d-flex gap-2">
-            <a href="{% url 'tweet_edit' tweet.id %}" class="btn btn-outline-accent btn-sm">Edit</a>
-            <a href="{% url 'tweet_delete' tweet.id %}" class="btn btn-danger btn-sm">Delete</a>
+            <a href="{% url 'tweet_edit' tweet.id %}" class="btn btn-sm" style="color: #933767">Edit</a>
+            <a href="{% url 'tweet_delete' tweet.id %}" class="btn btn-sm" style="color: #e4645a">Delete</a>
          </div>
          {% endif %}
       </div>
