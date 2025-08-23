@@ -8,8 +8,8 @@ Ping-Post | Register
     <div class="auth-card w-100" >
         <div class="row g-4 align-items-start overflow-hidden">
             <div>
-                <h2>Create account</h2>
-                <p class="pp-muted mb-3">Join PingPost to start pinging</p>
+                <h2 style="margin: 0;">Create account</h2>
+                <p class="pp-muted mt-1 mb-1 ms-0 me-0">Join PingPost to start pinging</p>
                 <form method="post" class="vstack gap-3">
                     {% csrf_token %}
                     <div class="mb-2">{{ form.username.label_tag }} {{ form.username }}</div>
@@ -22,7 +22,7 @@ Ping-Post | Register
                     </div>
                     <div class="mb-2">{{ form.password2.label_tag }} {{ form.password2 }}</div>
                     <div class="form-actions mt-2">
-                        <button class='btn btn-accent rounded-pill px-4'>Register</button>
+                        <button class='reg-bt'>Register</button>
                         <a href="{% url 'login' %}" class="pp-muted">Already have an account?</a>
                     </div>
                 </form>

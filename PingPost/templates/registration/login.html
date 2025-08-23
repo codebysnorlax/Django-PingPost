@@ -11,7 +11,7 @@ Ping-Post | Login
             {% csrf_token %}
             {{ form.as_p }}
             <div class="form-actions">
-                <button class='btn btn-accent rounded-pill px-4'>Login</button>
+                <button class='reg-bt'>Login</button>
                 <a href="{% url 'register' %}" class="pp-muted">Create an account</a>
             </div>
         </form>
