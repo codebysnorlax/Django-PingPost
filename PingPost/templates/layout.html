@@ -38,8 +38,9 @@
       </div>
     </div>
   </nav>
-
-  <div class="container py-4 page-container">
+{% comment %} this div's bootstrap classes trigger unwanted scrolling! {% endcomment %}
+  <div class="">
+  {% comment %} <div class="container py-4 page-container"> {% endcomment %}
     {% block content %}
 
     {% endblock %}

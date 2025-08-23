@@ -2,18 +2,23 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
 
 :root {
-  --pp-bg: #140a14;
-  --pp-surface: #1e0f1f;
-  --pp-surface-2: #2a1830;
-  --pp-text: #f4f1f6;
-  --pp-text-dim: #c8bfd0;
-  --pp-accent: #7d2b58;
-  --pp-accent-2: #9c3b6d;
-  --pp-danger: #e05252;
-  --pp-success: #2bb673;
-  --pp-shadow: 0 10px 30px rgba(0, 0, 0, 0.45);
+  --pp-bg: #0e0f12;        /* Deep charcoal background */
+  --pp-surface: #181a1f;   /* Slightly lighter surface */
+  --pp-surface-2: #22252d; /* Secondary surface */
+
+  --pp-text: #f5f7fa;      /* Crisp white text */
+  --pp-text-dim: #a0a7b4;  /* Muted gray text */
+
+  --pp-accent: #6a4cff;    /* Premium indigo accent */
+  --pp-accent-2: #8a6fff;  /* Lighter variant */
+
+  --pp-danger: #ff5c5c;    /* Polished red */
+  --pp-success: #3ccf91;   /* Modern teal green */
+
+  --pp-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
   --pp-radius: 16px;
 }
+
 
 [data-bs-theme="dark"] html {
   background: var(--pp-bg);
@@ -161,7 +166,7 @@
   background: #2a1830;
   border: 1px solid rgba(255, 255, 255, 0.08);
   color: var(--pp-text);
-  border-radius: 12px;
+  border-radius: 22px;
 }
 .auth-card input:focus,
 .auth-card textarea:focus,
@@ -205,7 +210,7 @@
 .form-actions {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 30px;
 }
 
 /* Tweet grid */
@@ -213,6 +218,7 @@
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
   gap: 16px;
+  margin: 12px;
 }
 .tweet-card img {
   border-top-left-radius: var(--pp-radius);
@@ -300,7 +306,7 @@ a:hover {
 .btn-danger:hover {
   background-image: linear-gradient(135deg, #d55a5a, #b84e4e);
   box-shadow: 0 6px 18px rgba(199, 74, 74, 0.45);
-  transform: translateY(-1px);
+  /* transform: translateY(-1px); */
 }
 
 /* Warning gradient button (used in create form submit) */
