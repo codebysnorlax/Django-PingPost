@@ -5,24 +5,94 @@ Ping-Post | Creative
 {% endblock %}
 {% comment %} ------------------------------------------- {% endcomment %}
 {% block content %}
-<div class="d-flex align-items-center justify-content-center auth-wrapper">
-    <div class="auth-card" style="max-width:560px; width:100%">
-        <h2 class="mb-1">
-            {% if form.instance.pk %}
-            Edit Ping
-            {% else %}
-            Create Ping
-            {% endif %}
+<div class="auth-wrapper d-flex justify-content-center">
+    <div class="auth-card w-100">
+        <h2 style="margin: 0;">
+            {% if form.instance.pk %}Edit Ping{% else %}Create Ping{% endif %}
         </h2>
-        <p class="pp-muted mb-3">Share what's on your mind</p>
+        <p class="pp-muted mt-1 mb-3">Share what's on your mind</p>
+        
         <form method='post' enctype='multipart/form-data' class='vstack gap-3'>
             {% csrf_token %}
-            {{ form.as_p }}
-            <div class="form-actions">
-                <button class='btn btn-accent rounded-pill px-4' type='submit'>Ping</button>
+            
+            <div class="mb-2">
+                {{ form.text.label_tag }} 
+                {{ form.text }}
+            </div>
+
+            <div class="mb-2">
+                <label class="pp-muted">Photo (Optional)</label>
+                <div class="drop-zone" onclick="document.getElementById('{{ form.photo.id_for_label }}').click()">
+                    <i class="bi bi-cloud-upload"></i>
+                    <p class="pp-muted">Drag & drop or click to upload</p>
+                </div>
+                <input type="file" id="{{ form.photo.id_for_label }}" name="{{ form.photo.name }}" accept="image/*" style="display: none;">
+                <div id="preview"></div>
+            </div>
+
+            <div class="form-actions mt-2">
+                <button class='btn btn-accent rounded-pill px-4' type='submit'>
+                    {% if form.instance.pk %}Update{% else %}Post{% endif %}
+                </button>
                 <a class='btn btn-outline-accent rounded-pill px-4' href="{% url 'tweet_list' %}">Back</a>
             </div>
         </form>
     </div>
 </div>
+
+<style>
+.drop-zone {
+    border: 2px dashed var(--pp-accent);
+    border-radius: 12px;
+    padding: 1.5rem;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    background: rgba(125, 43, 88, 0.05);
+    margin-bottom: 0.5rem;
+}
+.drop-zone:hover { 
+    background: rgba(125, 43, 88, 0.1); 
+}
+.drop-zone i { 
+    font-size: 1.5rem; 
+    color: var(--pp-accent); 
+    display: block; 
+    margin-bottom: 0.5rem; 
+}
+#preview img { 
+    width: 80px; 
+    height: 80px; 
+    object-fit: cover; 
+    border-radius: 8px; 
+    margin-top: 0.5rem; 
+}
+</style>
+
+<script>
+const dropZone = document.querySelector('.drop-zone');
+const fileInput = document.getElementById('{{ form.photo.id_for_label }}');
+const preview = document.getElementById('preview');
+
+dropZone.addEventListener('dragover', e => { e.preventDefault(); dropZone.style.background = 'rgba(125, 43, 88, 0.15)'; });
+dropZone.addEventListener('dragleave', () => dropZone.style.background = 'rgba(125, 43, 88, 0.05)');
+dropZone.addEventListener('drop', e => {
+    e.preventDefault();
+    dropZone.style.background = 'rgba(125, 43, 88, 0.05)';
+    if (e.dataTransfer.files.length) {
+        fileInput.files = e.dataTransfer.files;
+        showPreview(e.dataTransfer.files[0]);
+    }
+});
+
+fileInput.addEventListener('change', e => e.target.files.length && showPreview(e.target.files[0]));
+
+function showPreview(file) {
+    if (file.type.startsWith('image/')) {
+        const reader = new FileReader();
+        reader.onload = e => preview.innerHTML = `<img src="${e.target.result}" alt="Preview">`;
+        reader.readAsDataURL(file);
+    }
+}
+</script>
 {% endblock %}
