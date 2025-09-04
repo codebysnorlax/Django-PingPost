@@ -11,12 +11,12 @@ Ping-Post | Creative
             {% if form.instance.pk %}Edit Ping{% else %}Create Ping{% endif %}
         </h2>
         <p class="pp-muted mt-1 mb-3">Share what's on your mind</p>
-        
+
         <form method='post' enctype='multipart/form-data' class='vstack gap-3'>
             {% csrf_token %}
-            
+
             <div class="mb-2">
-                {{ form.text.label_tag }} 
+                {{ form.text.label_tag }}
                 {{ form.text }}
             </div>
 
@@ -39,35 +39,6 @@ Ping-Post | Creative
         </form>
     </div>
 </div>
-
-<style>
-.drop-zone {
-    border: 2px dashed var(--pp-accent);
-    border-radius: 12px;
-    padding: 1.5rem;
-    text-align: center;
-    cursor: pointer;
-    transition: all 0.2s ease;
-    background: rgba(125, 43, 88, 0.05);
-    margin-bottom: 0.5rem;
-}
-.drop-zone:hover { 
-    background: rgba(125, 43, 88, 0.1); 
-}
-.drop-zone i { 
-    font-size: 1.5rem; 
-    color: var(--pp-accent); 
-    display: block; 
-    margin-bottom: 0.5rem; 
-}
-#preview img { 
-    width: 80px; 
-    height: 80px; 
-    object-fit: cover; 
-    border-radius: 8px; 
-    margin-top: 0.5rem; 
-}
-</style>
 
 <script>
 const dropZone = document.querySelector('.drop-zone');

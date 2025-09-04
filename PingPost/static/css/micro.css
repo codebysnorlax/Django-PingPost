@@ -210,4 +210,30 @@
 .logout-button:active {
   transform: translate(2px ,2px);
 }
-/* sign in sign out */
+/* Drop box styling */
+.drop-zone {
+    border: 2px dashed var(--pp-accent);
+    border-radius: 12px;
+    padding: 1.5rem;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    background: rgba(125, 43, 88, 0.05);
+    margin-bottom: 0.5rem;
+}
+.drop-zone:hover {
+    background: rgba(125, 43, 88, 0.1);
+}
+.drop-zone i {
+    font-size: 1.5rem;
+    color: var(--pp-accent);
+    display: block;
+    margin-bottom: 0.5rem;
+}
+#preview img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-top: 0.5rem;
+}
