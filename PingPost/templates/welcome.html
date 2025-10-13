@@ -3,12 +3,47 @@
 {% block title %}Welcome to PingPost{% endblock %}
 
 {% block content %}
-<div class="container py-5">
-    <div class="row justify-content-center">
-        <div class="col-md-8 text-center">
-            <h1 class="display-4 mb-4">Welcome to PingPost</h1>
-            <p class="lead mb-4">Share your thoughts in 250 characters or less</p>
-            <a href="/tweet/" class="btn btn-accent btn-lg rounded-pill px-4">Get Started</a>
+<div class="container-fluid" style="height: calc(100vh - 80px); overflow: hidden;">
+    <div class="row h-100">
+        <div class="col-lg-6 d-flex align-items-center">
+            <div class="px-5">
+                <h1 class="display-4 fw-bold mb-4">Your thoughts.<br>Your moment.<br><span class="text-primary">Your ping.</span></h1>
+                <p class="fs-6 text-muted mb-4">Join the conversation. Share what matters to you in quick, authentic posts.</p>
+                <div class="d-flex gap-3">
+                    <a href="/accounts/login/" class="btn btn-primary btn-lg px-4">Jump In</a>
+                    <a href="/tweet/" class="btn btn-outline-secondary btn-lg px-4">Browse Posts</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-6 d-flex align-items-center justify-content-center">
+            <div class="text-center">
+                <div class="bg-dark rounded-4 p-5 shadow-lg" style="max-width: 400px;">
+                    <div class="mb-4">
+                        <div class="bg-primary rounded-circle d-inline-flex align-items-center justify-content-center" style="width: 60px; height: 60px;">
+                            <i class="bi bi-chat-dots text-white fs-3"></i>
+                        </div>
+                    </div>
+                    <p class="text-muted small mb-4">Note: Keep your posts authentic and respectful</p>
+                    <div class="row g-3 text-center">
+                        <div class="col-6">
+                            <i class="bi bi-shield-check text-success fs-5"></i>
+                            <div class="small text-muted mt-1">Secure</div>
+                        </div>
+                        <div class="col-6">
+                            <i class="bi bi-lightning-fill text-warning fs-5"></i>
+                            <div class="small text-muted mt-1">Fast</div>
+                        </div>
+                        <div class="col-6">
+                            <i class="bi bi-people-fill text-info fs-5"></i>
+                            <div class="small text-muted mt-1">Social</div>
+                        </div>
+                        <div class="col-6">
+                            <i class="bi bi-heart-fill text-danger fs-5"></i>
+                            <div class="small text-muted mt-1">Simple</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>
