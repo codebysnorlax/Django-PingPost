@@ -19,9 +19,13 @@ Ping-Post
          <p class="card-text">{{tweet.text}}
          </p>
          {% if tweet.user == user %}
-         <div class="d-flex gap-2">
-            <a href="{% url 'tweet_edit' tweet.id %}" class="btn btn-sm" style="color: #933767">Edit</a>
-            <a href="{% url 'tweet_delete' tweet.id %}" class="btn btn-sm" style="color: #e4645a">Delete</a>
+         <div class="justify-content-end d-flex gap-2">
+            <a href="{% url 'tweet_edit' tweet.id %}" class="btn btn-sm btn-outline-primary">
+               <i class="bi bi-pencil"></i>
+            </a>
+            <a href="{% url 'tweet_delete' tweet.id %}" class="btn btn-sm btn-outline-danger">
+               <i class="bi bi-trash"></i>
+            </a>
          </div>
          {% endif %}
       </div>
