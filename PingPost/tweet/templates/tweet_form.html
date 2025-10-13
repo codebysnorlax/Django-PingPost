@@ -6,13 +6,13 @@ Ping-Post | Creative
 {% comment %} ------------------------------------------- {% endcomment %}
 {% block content %}
 <div class="auth-wrapper d-flex justify-content-center">
-    <div class="auth-card w-100">
-        <h2 style="margin: 0;">
+    <div class="auth-card" style="max-width: 500px;">
+        <h4 style="margin: 0;">
             {% if form.instance.pk %}Edit Ping{% else %}Create Ping{% endif %}
-        </h2>
-        <p class="pp-muted mt-1 mb-3">Share what's on your mind</p>
+        </h4>
+        <p class="pp-muted mt-1 mb-3 small">Share what's on your mind</p>
 
-        <form method='post' enctype='multipart/form-data' class='vstack gap-3'>
+        <form method='post' enctype='multipart/form-data' class='vstack gap-2'>
             {% csrf_token %}
 
             <div class="mb-2">
@@ -21,20 +21,20 @@ Ping-Post | Creative
             </div>
 
             <div class="mb-2">
-                <label class="pp-muted">Photo (Optional)</label>
+                <label class="pp-muted small">Photo (Optional)</label>
                 <div class="drop-zone" onclick="document.getElementById('{{ form.photo.id_for_label }}').click()">
                     <i class="bi bi-cloud-upload"></i>
-                    <p class="pp-muted">Drag & drop or click to upload</p>
+                    <p class="pp-muted small">Drag & drop or click to upload</p>
                 </div>
                 <input type="file" id="{{ form.photo.id_for_label }}" name="{{ form.photo.name }}" accept="image/*" style="display: none;">
                 <div id="preview"></div>
             </div>
 
             <div class="form-actions mt-2">
-                <button class='btn btn-accent rounded-pill px-4' type='submit'>
+                <button class='btn btn-accent rounded-pill px-3' type='submit'>
                     {% if form.instance.pk %}Update{% else %}Post{% endif %}
                 </button>
-                <a class='btn btn-outline-accent rounded-pill px-4' href="{% url 'tweet_list' %}">Back</a>
+                <a class='btn btn-outline-accent rounded-pill px-3' href="{% url 'tweet_list' %}">Back</a>
             </div>
         </form>
     </div>
