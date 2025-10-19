@@ -1,0 +1,50 @@
+{% extends 'layout.html' %}
+
+{% block title %}Welcome to PingPost{% endblock %}
+
+{% block content %}
+<div class="container" style="height: calc(100vh - 80px); overflow: hidden;">
+    <div class="row h-100">
+        <div class="col-lg-6 d-flex align-items-center">
+            <div class="px-3">
+                <h1 class="h2 fw-bold mb-3">Your thoughts.<br>Your moment.<br><span class="text-primary">Your ping.</span></h1>
+                <p class="mb-3">Join the conversation. Share what matters to you in quick, authentic posts.</p>
+                <div class="d-flex gap-2">
+                    <a href="/accounts/login/" class="btn btn-primary px-3">Jump In</a>
+                    <a href="/tweet/" class="btn btn-outline-secondary px-3">Browse Posts</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-6 d-flex align-items-center justify-content-center">
+            <div class="text-center">
+                <div class="bg-dark rounded-3 p-4 shadow" style="max-width: 300px;">
+                    <div class="mb-3">
+                        <div class="bg-primary rounded-circle d-inline-flex align-items-center justify-content-center" style="width: 50px; height: 50px;">
+                            <i class="bi bi-chat-dots text-white fs-4"></i>
+                        </div>
+                    </div>
+                    <p class="text-muted small mb-3">Note: Keep your posts authentic and respectful</p>
+                    <div class="row g-2 text-center">
+                        <div class="col-6">
+                            <i class="bi bi-shield-check text-success"></i>
+                            <div class="small text-muted mt-1">Secure</div>
+                        </div>
+                        <div class="col-6">
+                            <i class="bi bi-lightning-fill text-warning"></i>
+                            <div class="small text-muted mt-1">Fast</div>
+                        </div>
+                        <div class="col-6">
+                            <i class="bi bi-people-fill text-info"></i>
+                            <div class="small text-muted mt-1">Social</div>
+                        </div>
+                        <div class="col-6">
+                            <i class="bi bi-heart-fill text-danger"></i>
+                            <div class="small text-muted mt-1">Simple</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

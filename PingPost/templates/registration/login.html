@@ -4,15 +4,15 @@ Ping-Post | Login
 {% endblock %}
 {% block content %}
 <div class="d-flex align-items-center justify-content-center auth-wrapper">
-    <div class="auth-card">
-        <h2>Welcome back</h2>
-        <p class="pp-muted mb-3">Sign in to continue</p>
-        <form method="post" class="vstack gap-3">
+    <div class="auth-card" style="max-width: 400px;">
+        <h4>Welcome back</h4>
+        <p class="pp-muted mb-3 small">Sign in to continue</p>
+        <form method="post" class="vstack gap-2">
             {% csrf_token %}
             {{ form.as_p }}
             <div class="form-actions">
                 <button class='reg-bt'>Login</button>
-                <a href="{% url 'register' %}" class="pp-muted">Create an account</a>
+                <a href="{% url 'register' %}" class="pp-muted small">Create an account</a>
             </div>
         </form>
     </div>

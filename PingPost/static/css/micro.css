@@ -1,7 +1,7 @@
 /* delete button styling */
 .del_animation {
-  width: 50px;
-  height: 50px;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
   background-color: #88315f;
   border: none;
@@ -9,7 +9,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.164);
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.164);
   cursor: pointer;
   transition-duration: 0.3s;
   overflow: hidden;
@@ -17,7 +17,7 @@
 }
 
 .svgIcon {
-  width: 12px;
+  width: 10px;
   transition-duration: 0.3s;
 }
 
@@ -26,15 +26,15 @@
 }
 
 .del_animation:hover {
-  width: 140px;
-  border-radius: 50px;
+  width: 120px;
+  border-radius: 40px;
   transition-duration: 0.3s;
   background-color: rgb(255, 69, 69);
   align-items: center;
 }
 
 .del_animation:hover .svgIcon {
-  width: 50px;
+  width: 40px;
   transition-duration: 0.3s;
   transform: translateY(60%);
 }
@@ -49,32 +49,32 @@
 }
 
 .del_animation:hover::before {
-  font-size: 13px;
+  font-size: 11px;
   opacity: 1;
-  transform: translateY(30px);
+  transform: translateY(25px);
   transition-duration: 0.3s;
 }
 /* register button styling */
 .reg-bt {
-  width: 9em;
-  height: 3em;
+  width: 7em;
+  height: 2.5em;
   border-radius: 30em;
-  font-size: 15px;
+  font-size: 14px;
   font-family: inherit;
   border: none;
   position: relative;
   overflow: hidden;
   z-index: 1;
-  color: #fff; /* text white for contrast */
+  color: #fff;
   background: transparent;
-  box-shadow: 6px 6px 12px rgba(0, 0, 0, 0.4),
-    -6px -6px 12px rgba(255, 255, 255, 0.05);
+  box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.4),
+    -4px -4px 8px rgba(255, 255, 255, 0.05);
 }
 
 .reg-bt::before {
   content: "";
   width: 0;
-  height: 3em;
+  height: 2.5em;
   border-radius: 30em;
   position: absolute;
   top: 0;
@@ -86,12 +86,12 @@
 }
 
 .reg-bt:hover::before {
-  width: 9em;
+  width: 7em;
 }
 /* Edit button styling */
 .edit-button {
-  width: 50px;
-  height: 50px;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
   background-color: #88315f;
   border: none;
@@ -99,17 +99,17 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.164);
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.164);
   cursor: pointer;
   overflow: hidden;
   position: relative;
   text-decoration: none !important;
-  transition: all 0.3s ease;  /* smoother */
+  transition: all 0.3s ease;
 }
 
 .edit-svgIcon {
-  width: 17px;
-  transition: all 0.3s ease; /* smoother */
+  width: 14px;
+  transition: all 0.3s ease;
 }
 
 .edit-svgIcon path {
@@ -117,14 +117,14 @@
 }
 
 .edit-button:hover {
-  width: 120px;
-  border-radius: 50px;
+  width: 100px;
+  border-radius: 40px;
   background-color: rgb(255, 69, 69);
   align-items: center;
 }
 
 .edit-button:hover .edit-svgIcon {
-  width: 20px;
+  width: 16px;
   transform: rotate(360deg);
 }
 
@@ -133,13 +133,13 @@
   content: "Cancel";
   color: white;
   font-size: 2px;
-  transition: all 0.3s ease; /* smoother */
+  transition: all 0.3s ease;
 }
 
 .edit-button:hover::before {
   display: block;
-  padding-right: 10px;
-  font-size: 13px;
+  padding-right: 8px;
+  font-size: 11px;
   opacity: 1;
   transform: translateY(0px);
 }
@@ -160,6 +160,23 @@
   background-color: #f03935;
 }
 
+/* smaller logout button for navbar */
+.logout-button-small {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 32px;
+  height: 32px;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition-duration: .3s;
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.199);
+  background-color: #f03935;
+}
+
 /* plus sign */
 .sign {
   width: 100%;
@@ -170,7 +187,11 @@
 }
 
 .sign svg {
-  width: 17px;
+  width: 14px;
+}
+
+.logout-button-small .sign svg {
+  width: 12px;
 }
 
 .sign svg path {
@@ -183,7 +204,7 @@
   width: 0%;
   opacity: 0;
   color: white;
-  font-size: 1em;
+  font-size: 0.9em;
   font-weight: 600;
   transition-duration: .3s;
 }
@@ -194,10 +215,22 @@
   transition-duration: .3s;
 }
 
+.logout-button-small:hover {
+  width: 100px;
+  border-radius: 32px;
+  transition-duration: .3s;
+}
+
 .logout-button:hover .sign {
   width: 30%;
   transition-duration: .3s;
   padding-left: 20px;
+}
+
+.logout-button-small:hover .sign {
+  width: 30%;
+  transition-duration: .3s;
+  padding-left: 16px;
 }
 /* hover effect button's text */
 .logout-button:hover .log-text {
@@ -206,8 +239,41 @@
   transition-duration: .3s;
   padding-right: 10px;
 }
+
+.logout-button-small:hover .log-text {
+  opacity: 1;
+  width: 70%;
+  transition-duration: .3s;
+  padding-right: 8px;
+}
 /* button click effect*/
-.logout-button:active {
+.logout-button:active, .logout-button-small:active {
   transform: translate(2px ,2px);
 }
-/* sign in sign out */
+/* Drop box styling */
+.drop-zone {
+    border: 2px dashed var(--pp-accent);
+    border-radius: 8px;
+    padding: 1rem;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    background: rgba(125, 43, 88, 0.05);
+    margin-bottom: 0.5rem;
+}
+.drop-zone:hover {
+    background: rgba(125, 43, 88, 0.1);
+}
+.drop-zone i {
+    font-size: 1.2rem;
+    color: var(--pp-accent);
+    display: block;
+    margin-bottom: 0.5rem;
+}
+#preview img {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 6px;
+    margin-top: 0.5rem;
+}

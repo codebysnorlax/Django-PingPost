@@ -1,14 +1,4 @@
-from django.http import JsonResponse
+from django.shortcuts import render
 
 def home(request):
-    data = {
-    'status': 'success',
-    'message': 'Hello from Django!',
-    'user': 'snorlax',
-    'Hint': {
-        'type': '/tweet',
-        'for': 'navigate to main page'
-    }
-}
-
-    return JsonResponse(data)
+    return render(request, 'welcome.html')

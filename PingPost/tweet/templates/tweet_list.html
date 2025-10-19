@@ -19,13 +19,53 @@ Ping-Post
          <p class="card-text">{{tweet.text}}
          </p>
          {% if tweet.user == user %}
-         <div class="d-flex gap-2">
-            <a href="{% url 'tweet_edit' tweet.id %}" class="btn btn-sm" style="color: #933767">Edit</a>
-            <a href="{% url 'tweet_delete' tweet.id %}" class="btn btn-sm" style="color: #e4645a">Delete</a>
+         <div class="justify-content-end d-flex gap-2">
+            <a href="{% url 'tweet_edit' tweet.id %}" class="btn btn-sm btn-outline-primary">
+               <i class="bi bi-pencil"></i>
+            </a>
+            <a href="{% url 'tweet_delete' tweet.id %}" class="btn btn-sm btn-outline-danger">
+               <i class="bi bi-trash"></i>
+            </a>
          </div>
          {% endif %}
       </div>
    </div>
    {% endfor %}
 </div>
+
+{% if tweets %}
+<footer class="mt-5 py-4 bg-dark border-top">
+   <div class="container">
+      <div class="row justify-content-between align-items-center">
+         <div class="col-md-4 text-center text-md-start mb-3 mb-md-0">
+            <div class="d-flex justify-content-center justify-content-md-start gap-4">
+               <div class="text-center">
+                  <div class="fw-bold text-primary fs-5">{{ tweets|length }}</div>
+                  <small class="text-muted">Posts</small>
+               </div>
+               <div class="text-center">
+                  <div class="fw-bold text-success fs-5">{{ tweets|length|add:42 }}</div>
+                  <small class="text-muted">Views</small>
+               </div>
+               <div class="text-center">
+                  <div class="fw-bold text-warning fs-5">Active</div>
+                  <small class="text-muted">Status</small>
+               </div>
+            </div>
+         </div>
+         <div class="col-md-4 text-center mb-3 mb-md-0">
+            <small class="text-muted fw-medium">CS50 Final Project</small>
+         </div>
+         <div class="col-md-4 text-center text-md-end">
+            <div class="d-flex justify-content-center justify-content-md-end gap-3">
+               <a href="https://github.com/codebysnorlax" class="text-muted fs-5"><i class="bi bi-github"></i></a>
+               <a href="https://linkedin.com/in/ravi-ranjan-9b338b333" class="text-muted fs-5"><i class="bi bi-linkedin"></i></a>
+               <a href="https://twitter.com/ravi_ranjan_404" class="text-muted fs-5"><i class="bi bi-twitter"></i></a>
+            </div>
+         </div>
+      </div>
+
+   </div>
+</footer>
+{% endif %}
 {% endblock %}

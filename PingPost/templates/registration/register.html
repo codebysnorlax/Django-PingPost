@@ -5,29 +5,28 @@ Ping-Post | Register
 {% endblock %}
 {% block content %}
 <div class="auth-wrapper d-flex justify-content-center">
-    <div class="auth-card w-100" >
-        <div class="row g-4 align-items-start overflow-hidden">
+    <div class="auth-card" style="max-width: 450px;">
+        <div class="row g-3 align-items-start overflow-hidden">
             <div>
-                <h2 style="margin: 0;">Create account</h2>
-                <p class="pp-muted mt-1 mb-1 ms-0 me-0">Join PingPost to start pinging</p>
-                <form method="post" class="vstack gap-3">
+                <h4 style="margin: 0;">Create account</h4>
+                <p class="pp-muted mt-1 mb-1 ms-0 me-0 small">Join PingPost to start pinging</p>
+                <form method="post" class="vstack gap-2">
                     {% csrf_token %}
                     <div class="mb-2">{{ form.username.label_tag }} {{ form.username }}</div>
                     <div class="mb-2">{{ form.email.label_tag }} {{ form.email }}</div>
                     <div class="mb-2 field-with-help">
                         {{ form.password1.label_tag }} {{ form.password1 }}
                         <div class="field-help{% if form.password1.value %} show{% endif %}">
-                            {{ form.password1.help_text|safe }}
+                            <small>{{ form.password1.help_text|safe }}</small>
                         </div>
                     </div>
                     <div class="mb-2">{{ form.password2.label_tag }} {{ form.password2 }}</div>
                     <div class="form-actions mt-2">
                         <button class='reg-bt'>Register</button>
-                        <a href="{% url 'login' %}" class="pp-muted">Already have an account?</a>
+                        <a href="{% url 'login' %}" class="pp-muted small">Already have an account?</a>
                     </div>
                 </form>
             </div>
-            {% comment %} <div class="col-12 col-lg-6 d-none d-lg-block"></div> {% endcomment %}
         </div>
     </div>
 </div>
