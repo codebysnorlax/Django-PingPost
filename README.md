@@ -1,6 +1,15 @@
 ## PingPost
 Ping-Post is a micro (temporary) blogging app where users can share short messages ("pings") along with pictures, similar to Twitter or Instagram Threads.
 
+### get started
+
+1. Clone the repo: `git clone https://github.com/codebysnorlax/Django-PingPost.git`
+2. cd into the project: `cd Django-PingPost`
+3. python -m venv .venv
+4. source .venv/bin/activate (Linux/Mac) or .venv\Scripts\activate (Windows)
+5. pip install -r requirements.txt
+6. python manage.py migrate
+7. python manage.py runserver
 
 #### Description
 

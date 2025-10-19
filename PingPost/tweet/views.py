@@ -4,6 +4,7 @@ from .forms import TweetForms, UserRegistrationForm
 from django.shortcuts import get_object_or_404, redirect
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import login
+import os
 
 
 # Create your views here.
@@ -33,12 +34,20 @@ def tweet_create(request):
 @login_required
 def tweet_edit(request, tweet_id):
     tweet = get_object_or_404(Tweet, pk=tweet_id, user = request.user)
+    old_photo = tweet.photo
+    
     if request.method == 'POST':
         form = TweetForms(request.POST, request.FILES, instance=tweet)
         if form.is_valid():
-            tweet = form.save(commit=False)
-            tweet.user = request.user
-            tweet.save()
+            new_tweet = form.save(commit=False)
+            new_tweet.user = request.user
+            
+            # Delete old photo if it's being replaced
+            if old_photo and new_tweet.photo != old_photo:
+                if os.path.isfile(old_photo.path):
+                    os.remove(old_photo.path)
+            
+            new_tweet.save()
             return redirect('tweet_list')
     else:
         form = TweetForms(instance=tweet)

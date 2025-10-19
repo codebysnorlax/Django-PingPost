@@ -1,7 +1,6 @@
-
 - **Project Title:** Ping-Post
 - **Name:** Ravi Ranjan Sharma
-- **GitHub:** Ravi-Ranjan-Sharma-droid
+- **GitHub:** codebysnorlax
 - **edX Username:** raviranjan12_1
 - **Location:** Bokaro, India
-- **Date:** September 5, 2025
+- **Date:** October 13, 2025

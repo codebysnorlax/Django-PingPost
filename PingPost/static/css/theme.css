@@ -212,16 +212,29 @@
 /* Tweet grid */
 .tweet-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-  gap: 12px;
-  margin: 12px;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 10px;
+  margin: 10px;
+}
+.tweet-card {
+  max-width: 250px;
 }
 .tweet-card img {
   border-top-left-radius: var(--pp-radius);
   border-top-right-radius: var(--pp-radius);
+  height: 140px;
+  object-fit: cover;
 }
 .tweet-card .card-body {
-  padding: 12px 14px 14px;
+  padding: 10px 12px 12px;
+}
+.tweet-card .card-title {
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+}
+.tweet-card .card-text {
+  font-size: 0.85rem;
+  line-height: 1.3;
 }
 
 /* Utilities */
