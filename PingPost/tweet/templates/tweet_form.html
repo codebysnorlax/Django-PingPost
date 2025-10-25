@@ -9,17 +9,10 @@ Ping-Post | Creative
     <div class="auth-card" style="max-width: 500px;">
         <h4 style="margin: 0;">
             {% if form.instance.pk %}Edit Ping{% else %}Create Ping{% endif %}
-<<<<<<< HEAD
-        </h2>
-        <p class="pp-muted mt-1 mb-3">Share what's on your mind</p>
-
-        <form method='post' enctype='multipart/form-data' class='vstack gap-3'>
-=======
         </h4>
         <p class="pp-muted mt-1 mb-3 small">Share what's on your mind</p>
 
         <form method='post' enctype='multipart/form-data' class='vstack gap-2'>
->>>>>>> 1892021787a82e4108cede16e763a4f086bdba04
             {% csrf_token %}
 
             <div class="mb-2">

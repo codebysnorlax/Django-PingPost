@@ -253,13 +253,8 @@
 /* Drop box styling */
 .drop-zone {
     border: 2px dashed var(--pp-accent);
-<<<<<<< HEAD
-    border-radius: 12px;
-    padding: 1.5rem;
-=======
     border-radius: 8px;
     padding: 1rem;
->>>>>>> 1892021787a82e4108cede16e763a4f086bdba04
     text-align: center;
     cursor: pointer;
     transition: all 0.2s ease;
@@ -270,26 +265,15 @@
     background: rgba(125, 43, 88, 0.1);
 }
 .drop-zone i {
-<<<<<<< HEAD
-    font-size: 1.5rem;
-=======
     font-size: 1.2rem;
->>>>>>> 1892021787a82e4108cede16e763a4f086bdba04
     color: var(--pp-accent);
     display: block;
     margin-bottom: 0.5rem;
 }
 #preview img {
-<<<<<<< HEAD
-    width: 80px;
-    height: 80px;
-    object-fit: cover;
-    border-radius: 8px;
-=======
     width: 60px;
     height: 60px;
     object-fit: cover;
     border-radius: 6px;
->>>>>>> 1892021787a82e4108cede16e763a4f086bdba04
     margin-top: 0.5rem;
 }
